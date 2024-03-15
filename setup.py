@@ -13,7 +13,7 @@ with open("requirements.txt", "w", encoding="utf-8") as f:
     f.write("\n".join(production_dependencies + development_dependencies))
 
 setup(
-    name="easyeda2ato",
+    name="easyeda2kicad",
     description=(
         "A Python script that convert any electronic components from LCSC or EasyEDA to"
         " a Kicad library"
