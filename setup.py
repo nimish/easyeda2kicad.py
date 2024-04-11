@@ -13,7 +13,7 @@ with open("requirements.txt", "w", encoding="utf-8") as f:
     f.write("\n".join(production_dependencies + development_dependencies))
 
 setup(
-    name="easyeda2kicad",
+    name="easyeda2ato",
     description=(
         "A Python script that convert any electronic components from LCSC or EasyEDA to"
         " a Kicad library"
@@ -31,10 +31,11 @@ setup(
     license="AGPL-3.0",
     py_modules=["easyeda2kicad"],
     platforms="any",
-    packages=find_packages(exclude=["tests", "utils"]),
+    packages=find_packages(),
     package_dir={"easyeda2kicad": "easyeda2kicad"},
     entry_points={"console_scripts": ["easyeda2kicad = easyeda2kicad.__main__:main"]},
     python_requires=">=3.6",
+    include_package_data=True,
     install_requires=production_dependencies,
     extras_require={"dev": development_dependencies},
     zip_safe=False,
